@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var person: Person!
+    
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var emailTextFiled: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!

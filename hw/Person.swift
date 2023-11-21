@@ -6,40 +6,29 @@
 //
 
 import Foundation
-
+ 
 struct Person {
-    var name: String
-    var surname: String
-    var email: String
-    var phoneNumber: String
+    let name: String
+    let surname: String
+    let email: String
+    let phoneNumber: String
     
     static func generatePerson () -> [Person] {
         
-        var person: [Person] = []
+        var persons: [Person] = []
         
-        for _ in 1...20 {
-            let names = DataManager.shared.names.shuffle() 
+        let names = DataManager.shared.firstNames.shuffled()
+        let secondNames = DataManager.shared.lastNames.shuffled()
+        let emails = DataManager.shared.randomEmails.shuffled()
+        let phones = DataManager.shared.randomPhoneNumbers.shuffled()
+        
+        for index in 0..<names.count {
+            let person = Person(name: names[index], surname: secondNames[index], email: emails[index], phoneNumber: phones[index])
             
-            let person = "\(firstName) \(secondName)"
+            persons.append(person)
             
-            let newPersonArray = people.contains("\(person)")
-            if !newPersonArray {
-                people.append(person)
-                emailDetail.append(rndEmail)
-                phoneDetail.append(rndPhone)
-            } else {
-                print(" found a copy of person ")
-            }
-            
-            number += 1
-            print(number)
         }
-        print("cycles - \(number)")
-        print("people - \(people.self.count)")
-        print("emails - \(emailDetail.self.count)")
-        print("phones - \(phoneDetail.self.count)")
+        return persons
     }
-    
-    
     
 }
