@@ -20,6 +20,8 @@ class TableViewController: UITableViewController {
          self.clearsSelectionOnViewWillAppear = false
 
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.title = "Persons List"
+        
       
     }
 
