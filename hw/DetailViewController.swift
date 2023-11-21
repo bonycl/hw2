@@ -25,13 +25,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainLabel.text = user
+        mainLabel.text = person.name + " " + person.surname
         mainLabel.numberOfLines = 1
         emailTextFiled.isUserInteractionEnabled = false
         phoneTextField.isUserInteractionEnabled = false
         
-        emailTextFiled.text = userEmail.randomElement()
-        phoneTextField.text = userPhone.randomElement()
+        emailTextFiled.text = "\(person.email)"
+        phoneTextField.text = "\(person.phoneNumber)"
         
        
         
